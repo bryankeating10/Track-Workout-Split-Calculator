@@ -4,7 +4,7 @@ Enter your desired distance and goal time and receive a graphic with the times y
 - [Installation](#installation)
 - [Usage](#usage)
 - [Output](#output)
-- [Contributing](#contribution)
+- [Contributing](#contributing)
 ## Installation
 1. Clone the repository to your local machine:
    (bash)

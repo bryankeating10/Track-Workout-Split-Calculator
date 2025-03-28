@@ -15,13 +15,13 @@ Enter your desired distance and goal time and receive a graphic with the times y
         * cd /path/to/your/file
         * start index.html
    - Mac
-        (bash)
-        cd /path/to/your/file
-        open index.html
+        * (bash)
+        * cd /path/to/your/file
+        * open index.html
    - Linux
-        (bash)
-        cd /path/to/your/file
-        xdg-open index.html
+        * (bash)
+        * cd /path/to/your/file
+        * xdg-open index.html
 ## Usage
 1. Enter the rep distance (Ex. 1600m) when prompted
 2. Enter your goal time for the distance. Acceptable formats are hh:mm:ss or mm:ss

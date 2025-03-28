@@ -9,7 +9,19 @@ Enter your desired distance and goal time and receive a graphic with the times y
 1. Clone the repository to your local machine:
    (bash)
    git clone 'https://github.com/bryankeating10/Track-Workout-Split-Calculator'
-2. Install dependencies (Ex. Java Script)
+2. Run the html file in your default browser:
+   - Windows:
+        (bash)
+        cd /path/to/your/file
+        start index.html
+   - Mac
+        (bash)
+        cd /path/to/your/file
+        open index.html
+   - Linux
+        (bash)
+        cd /path/to/your/file
+        xdg-open index.html
 ## Usage
 1. Enter the rep distance (Ex. 1600m) when prompted
 2. Enter your goal time for the distance. Acceptable formats are hh:mm:ss or mm:ss

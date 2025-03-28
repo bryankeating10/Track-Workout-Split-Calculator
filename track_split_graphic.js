@@ -57,8 +57,35 @@ document.addEventListener("DOMContentLoaded", function () {
         ctx.fillStyle = GRASS_COLOR;
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+        // Fill the area enclosed by the outer ring with TRACK_COLOR
+        const outerRadius = (TRACK_WIDTH / 4.682) + ((LANES + 1) * LANE_WIDTH);
+        const startX = (TRACK_WIDTH / 4.847) + LANES * LANE_WIDTH + 50;
+        const endX = startX + TRACK_WIDTH / 2.096;
+        const centerY = TRACK_HEIGHT / 2 + 50;
+
+        ctx.beginPath();
+        ctx.arc(startX, centerY, outerRadius, Math.PI / 2, -Math.PI / 2);
+        ctx.lineTo(endX, centerY - outerRadius);
+        ctx.arc(endX, centerY, outerRadius, -Math.PI / 2, Math.PI / 2, true);
+        ctx.lineTo(startX, centerY + outerRadius);
+        ctx.closePath();
         ctx.fillStyle = TRACK_COLOR;
-        ctx.fillRect(50, 50, TRACK_WIDTH, TRACK_HEIGHT);
+        ctx.fill();
+
+            // Draw the inner grass area
+        const innerRadius = (TRACK_WIDTH / 4.682) + LANE_WIDTH;
+        const startXin = (TRACK_WIDTH / 4.847) + LANES * LANE_WIDTH + 50;
+        const endXin = startX + TRACK_WIDTH / 2.096;
+        const centerYin = TRACK_HEIGHT / 2 + 50;
+
+        ctx.beginPath();
+        ctx.arc(startXin, centerYin, innerRadius, Math.PI / 2, -Math.PI / 2);
+        ctx.lineTo(endXin, centerYin - innerRadius);
+        ctx.arc(endXin, centerYin, innerRadius, -Math.PI / 2, Math.PI / 2, true);
+        ctx.lineTo(startXin, centerYin + innerRadius);
+        ctx.closePath();
+        ctx.fillStyle = GRASS_COLOR;
+        ctx.fill();
 
         for (let i = LANES + 2; i > 1; i--) {
             drawRing(i);

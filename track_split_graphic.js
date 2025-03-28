@@ -122,39 +122,43 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // User input prompts
-    let distance = parseInt(prompt("Enter your distance in meters (Ex. 1600): "), 10);
-    let goalTime = prompt("Enter your time in hh:mm:ss format (Ex. 4:48): ");
+    function handleUserInput() {
+        // User input prompts
+        let distance = parseInt(prompt("Enter your distance in meters (Ex. 1600): "), 10);
+        let goalTime = prompt("Enter your time in hh:mm:ss format (Ex. 4:48): ");
 
-    // Convert input time to seconds
-    let timeParts = goalTime.split(":").map(Number);
-    let totalSeconds = timeParts.length === 3
-        ? timeParts[0] * 3600 + timeParts[1] * 60 + timeParts[2]
-        : timeParts.length === 2
-            ? timeParts[0] * 60 + timeParts[1]
-            : timeParts[0];
+        // Convert input time to seconds
+        let timeParts = goalTime.split(":").map(Number);
+        let totalSeconds = timeParts.length === 3
+            ? timeParts[0] * 3600 + timeParts[1] * 60 + timeParts[2]
+            : timeParts.length === 2
+                ? timeParts[0] * 60 + timeParts[1]
+                : timeParts[0];
 
-    let splitTime = (totalSeconds / distance) * 100;
-    let splits = createSplits(distance, splitTime);
+        let splitTime = (totalSeconds / distance) * 100;
+        let splits = createSplits(distance, splitTime);
 
-    console.log(`100m split time: ${splitTime.toFixed(2)}s`);
-    console.log("Splits:", splits);
+        console.log(`100m split time: ${splitTime.toFixed(2)}s`);
+        console.log("Splits:", splits);
 
-    // Define text box positions for 100m, 200m, 300m, 400m marks
-    let textBoxes = [
-        { x: 800, y: 150, label: "100m", text: "" },
-        { x: 300, y: 150, label: "200m", text: "" },
-        { x: 300, y: 450, label: "300m", text: "" },
-        { x: 800, y: 450, label: "400m", text: "" }
-    ];
+        // Define text box positions for 100m, 200m, 300m, 400m marks
+        let textBoxes = [
+            { x: 800, y: 150, label: "100m", text: "" },
+            { x: 300, y: 150, label: "200m", text: "" },
+            { x: 300, y: 450, label: "300m", text: "" },
+            { x: 800, y: 450, label: "400m", text: "" }
+        ];
 
-    for (let i = 0; i < splits.length; i++) {
-        textBoxes[i % 4].text += splits[i] + ", ";
+        for (let i = 0; i < splits.length; i++) {
+            textBoxes[i % 4].text += splits[i] + ", ";
+        }
+
+        textBoxes.forEach(box => {
+            box.text = box.text.slice(0, -2);
+        });
+
+        return textBoxes;
     }
-
-    textBoxes.forEach(box => {
-        box.text = box.text.slice(0, -2);
-    });
 
     function drawTextBoxes() {
         ctx.fillStyle = "#FFFFFF";
@@ -174,9 +178,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function render() {
-        drawTrack();
-        drawTextBoxes();
+        drawTrack(); // Draw the track
+        textBoxes = handleUserInput(); // Get user input and splits
+        drawTextBoxes(); // Draw the text boxes with splits
     }
-
-    render();
+    render(); // Initial render
+    
 });

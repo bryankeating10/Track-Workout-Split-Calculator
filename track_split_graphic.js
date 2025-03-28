@@ -39,9 +39,14 @@ document.addEventListener("DOMContentLoaded", function () {
     // Draws one lane ring
     function drawRing(lane) {
         const innerRadius = (TRACK_WIDTH / 4.682) + ((lane - 1) * LANE_WIDTH);
+        const startX = (TRACK_WIDTH / 4.847) + LANES * LANE_WIDTH + 50;
+        const endX = startX + TRACK_WIDTH / 2.096;
+        const centerY = TRACK_HEIGHT / 2 + 50;
+
         ctx.beginPath();
-        ctx.arc((TRACK_WIDTH / 4.847) + LANES * LANE_WIDTH + 50, TRACK_HEIGHT / 2 + 50, innerRadius, Math.PI / 2, -Math.PI / 2);
-        ctx.arc((TRACK_WIDTH / 4.847) + LANES * LANE_WIDTH + 50 + TRACK_WIDTH / 2.096, TRACK_HEIGHT / 2 + 50, innerRadius, -Math.PI / 2, Math.PI / 2);
+        ctx.arc(startX, centerY, innerRadius, Math.PI / 2, -Math.PI / 2);
+        ctx.arc(endX, centerY, innerRadius, -Math.PI / 2, Math.PI / 2);
+        ctx.closePath(); // Closes the path, creating a line from the end to the start
         ctx.strokeStyle = LINE_COLOR;
         ctx.lineWidth = 1;
         ctx.stroke();

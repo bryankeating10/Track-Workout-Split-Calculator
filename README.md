@@ -1,10 +1,10 @@
 # Track Workout Split Calculator
 Enter your desired distance and goal time and receive a graphic with the times you should see at every 100m split of the rep.
 ## Table of Contents
-- Installation
-- Usage
-- Output
-- Contributing
+- [Installation](#installation)
+- [Usage](#usage)
+- [Output](#output)
+- [Contributing](#contributing)
 ## Installation
 1. Clone the repository to your local machine:
    (bash)
@@ -18,7 +18,7 @@ A graphic of a track will be generated with textboxes at the 100, 200, 300, and 
 ![Track Graphic](example-output.png)
 ## Contributing
 1. Fork the repo
-2. Creaet a new branch: 'git checkout -b feature-name'
+2. Create a new branch: 'git checkout -b feature-name'
 3. Make your changes
 4. Push your branch: 'git push origin feature-name'
 5. Create a pull request

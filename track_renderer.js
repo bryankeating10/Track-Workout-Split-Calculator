@@ -118,9 +118,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const textBoxes = [
             { x: 800, y: 150, label: "100m", text: "" },
-            { x: 300, y: 150, label: "200m", text: "" },
-            { x: 300, y: 450, label: "300m", text: "" },
-            { x: 800, y: 450, label: "400m", text: "" }
+            { x: 225, y: 150, label: "200m", text: "" },
+            { x: 225, y: 425, label: "300m", text: "" },
+            { x: 800, y: 425, label: "400m", text: "" }
         ];
 
         for (let i = 0; i < splits.length; i++) {
@@ -137,16 +137,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
         textBoxes.forEach(box => {
             ctx.fillStyle = TEXT_COLOR;
-            ctx.fillRect(box.x, box.y, 180, 90);
+            ctx.fillRect(box.x, box.y, 245, 120);
             ctx.strokeStyle = LINE_COLOR;
-            ctx.strokeRect(box.x, box.y, 180, 90);
+            ctx.strokeRect(box.x, box.y, 245, 120);
 
             ctx.fillStyle = "#000000";
-            const wrappedText = wrapText(box.text, 160);
+            const wrappedText = wrapText(box.text, 225);
             wrappedText.forEach((line, index) => {
-                ctx.fillText(line, box.x + 90, box.y + 30 + index * 20);
+                ctx.fillText(line, box.x + 120, box.y + 30 + index * 20);
             });
-            ctx.fillText(box.label, box.x + 90, box.y - 10);
+            ctx.fillText(box.label, box.x + 120, box.y - 10);
         });
     }
 

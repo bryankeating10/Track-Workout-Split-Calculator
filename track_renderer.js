@@ -92,6 +92,27 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    function wrapText(text, maxWidth) {
+        const words = text.split(" ");
+        let lines = [];
+        let currentLine = "";
+
+        words.forEach(word => {
+            let testLine = currentLine.length > 0 ? currentLine + " " + word : word;
+            let testWidth = ctx.measureText(testLine).width;
+
+            if (testWidth > maxWidth && currentLine.length > 0) {
+                lines.push(currentLine);
+                currentLine = word;
+            } else {
+                currentLine = testLine;
+            }
+        });
+
+        if (currentLine) lines.push(currentLine);
+        return lines;
+    }
+
     function renderSplits(splits) {
         drawTrack();
 
@@ -121,7 +142,10 @@ document.addEventListener("DOMContentLoaded", function () {
             ctx.strokeRect(box.x, box.y, 180, 90);
 
             ctx.fillStyle = "#000000";
-            ctx.fillText(box.text, box.x + 90, box.y + 45);
+            const wrappedText = wrapText(box.text, 160);
+            wrappedText.forEach((line, index) => {
+                ctx.fillText(line, box.x + 90, box.y + 30 + index * 20);
+            });
             ctx.fillText(box.label, box.x + 90, box.y - 10);
         });
     }

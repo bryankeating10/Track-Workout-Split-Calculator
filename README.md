@@ -9,7 +9,7 @@ Enter your desired distance and goal time and receive a graphic with the times y
 1. Clone the repository to your local machine:
    (bash)
    git clone 'https://github.com/bryankeating10/Track-Workout-Split-Calculator'
-2. Run the html file in your default browser:
+3. Run the html file in your default browser:
    - Windows:
         * (bash)
         * cd /path/to/your/file

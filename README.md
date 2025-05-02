@@ -1,16 +1,13 @@
 # Track Workout Split Calculator
-Enter your desired distance and goal time and receive a graphic with the times you should see at every 100m split of the rep.
+Enter your desired distance and goal time, and receive a graphic with the times you should see at every 100m split of the rep.
 ## Table of Contents
 - [How to Install](#installation)
 - [Instructions for Usage](#usage)
 - [What to Expect (Output)](#output)
 - [Contribute to the Project!](#contributing)
 ## Installation
-1. Clone the repository to your local machine:
-
-(bash)
-   git clone 'https://github.com/bryankeating10/Track-Workout-Split-Calculator'
-3. Run the html file in your default browser:
+1. Clone the repository to your local machine: git clone 'https://github.com/bryankeating10/Track-Workout-Split-Calculator'
+2. Run the HTML file in your default browser:
    - Windows:
         * (bash)
         * cd /path/to/your/file

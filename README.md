@@ -6,7 +6,7 @@ Enter your desired distance and goal time, and receive a graphic with the times 
 - [What to Expect (Output)](#output)
 - [Contribute to the Project!](#contributing)
 ## Installation
-1. Clone the repository to your local machine: git clone 'https://github.com/bryankeating10/Track-Workout-Split-Calculator'
+1. Clone the repository to your local machine: (bash) git clone 'https://github.com/bryankeating10/Track-Workout-Split-Calculator'
 2. Run the HTML file in your default browser:
    - Windows:
         * (bash)
